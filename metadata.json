@@ -1,5 +1,5 @@
 {
-  "name": "MatchTracker AI",
+  "name": "Copy of MatchTracker AI",
   "description": "An advanced tool for recording and analyzing football (soccer) match actions in real-time. Log events like goals, cards, and substitutions, and leverage Gemini to generate insightful match summaries and performance analyses.",
   "requestFramePermissions": []
 }
