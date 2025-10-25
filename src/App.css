@@ -1,0 +1,175 @@
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #root {
+    padding: 2rem;
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Responsive utilities */
+.responsive-container {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-container {
+    max-width: 1280px;
+  }
+}
+
+/* Mobile touch optimizations */
+@media (max-width: 640px) {
+  * {
+    touch-action: manipulation; /* Improve touch responsiveness */
+  }
+  
+  .touch-target {
+    min-height: 44px; /* Minimum touch target size for good UX */
+    min-width: 44px;
+  }
+  
+  input, button, select, textarea {
+    font-size: 16px; /* Prevent iOS zoom on focus */
+  }
+  
+  /* Better tap targets for mobile */
+  .mobile-tap-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Enhanced pitch and piano view for mobile */
+@media (max-width: 640px) {
+  .football-pitch {
+    aspect-ratio: 4/3; /* Slightly narrower aspect ratio on mobile */
+    touch-action: manipulation;
+  }
+  
+  .piano-grid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* Smaller grid items on mobile */
+    gap: 4px;
+  }
+  
+  /* Better spacing for player markers on small screens */
+  .player-marker-small {
+    transform: scale(0.85);
+  }
+}
+
+/* Prevent text from being too small on mobile */
+@media (max-width: 640px) {
+  .text-xs {
+    font-size: 0.7rem;
+  }
+  
+  h1, h2, h3 {
+    word-break: break-word;
+  }
+  
+  /* Ensure readable text in cards */
+  .card-content-mobile {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+/* Animations */
+@keyframes ball-pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.ball-pulse {
+  animation: ball-pulse 1s infinite;
+}
+
+.dashed-line {
+  stroke-dasharray: 5,5;
+}
+
+/* Fix for overlapping UI elements on small screens */
+@media (max-width: 480px) {
+  .mobile-menu-fix {
+    position: relative;
+    z-index: 40;
+  }
+  
+  .mobile-content-margin {
+    margin-bottom: 60px; /* Add space for fixed elements at bottom */
+  }
+  
+  .mobile-scrollable {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+}
