@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Tracker Piano</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">⚽ Football Tracker</h1>
+      <p class="subtitle">Professional Match Event Tracking</p>
+    </header>
+
+    <!-- Login Form -->
+    <div id="loginForm">
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+      </div>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+      <button id="loginBtn" class="btn primary">Login</button>
+      <p id="loginError" class="error-message" style="display:none;"></p>
+    </div>
+
+    <!-- User Info and Logout -->
+    <div id="userInfo" style="display:none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <p style="margin: 0;">Welcome, <span id="userEmail"></span>!</p>
+        <button id="logoutBtn" class="btn secondary" style="padding: 4px 8px; font-size: 12px;">Logout</button>
+      </div>
+    </div>
+
+    <!-- Dashboard Section (Visible only when logged in) -->
+    <div id="dashboardSection" style="display:none;">
+      <div class="connection-status" id="connectionStatus">
+        <div class="status-indicator online" id="statusIndicator"></div>
+        <span id="statusText">Connected</span>
+      </div>
+
+      <!-- Notifications Section -->
+      <div id="notificationsSection">
+        <h3 style="margin: 10px 0 8px 0; font-size: 14px;">📋 Match Assignments</h3>
+        <div id="notificationsList" style="max-height: 200px; overflow-y: auto;">
+          <div id="loadingNotifications" style="text-align: center; color: #666; padding: 20px;">
+            Loading notifications...
+          </div>
+          <div id="noNotifications" style="display: none; text-align: center; color: #666; padding: 20px;">
+            No new match assignments
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin: 15px 0;">
+
+      <!-- Manual Match Entry (Fallback) -->
+      <div id="manualMatchSection">
+        <h3 style="margin: 10px 0 8px 0; font-size: 14px;">🎯 Manual Entry</h3>
+        <div class="input-group">
+          <label for="userProvidedMatchId">Match Code:</label>
+          <input type="text" id="userProvidedMatchId" placeholder="Enter match code">
+          <p class="help-text" style="font-size: 0.8em; color: #666; margin-top: 4px;">
+            Use this if you have a specific match code to track.
+          </p>
+        </div>
+        <button id="startMatchTrackingBtn" class="btn primary">Start Tracking</button>
+        <p id="matchTrackingError" class="error-message" style="display:none;"></p>
+      </div>
+    </div>
+
+    <div class="status-info" id="statusInfo">
+      <p>Please log in to view your match assignments</p>
+    </div>
+  </div>
+  <script src="supabase.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
